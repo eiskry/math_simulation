@@ -7,4 +7,6 @@ for i=1:n
     y = (y + a(i)) .* x;
 end
 y = y + a(n+1);
+
+plot(x,y);
 end
