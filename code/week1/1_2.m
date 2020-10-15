@@ -13,6 +13,6 @@ A = [1 2; 3 4]
 % sum(sum(A))
 
 % norm(v)
-% sort(v)
-% abs(v)
+sort(v)
+abs(v)
 inv(A)
