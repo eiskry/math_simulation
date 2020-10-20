@@ -24,6 +24,9 @@ for it = 1:maxit
     end
 end
 
-x = linspace(0, 1, 52)
-y = linspace(0, 1, 52)
+x = linspace(0, 1, n+2)
+y = linspace(0, 1, n+2)
 surf(x, y, u)
+xlabel('x')
+ylabel('y')
+zlabel('z')

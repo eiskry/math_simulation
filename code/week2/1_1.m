@@ -25,3 +25,6 @@ end
 x = linspace(0, 1, 52)
 y = linspace(0, 1, 52)
 surf(x, y, u)
+xlabel('x')
+ylabel('y')
+zlabel('z')

@@ -27,7 +27,7 @@ for it = 1:maxit
     for i = 2:n+1
         for j = 2:n+1
             if p <= j && p <= i
-                j = q+p-j;
+                j = j+p;
             end
             r =  (u(i, j + 1) + u(i, j-1) + u(i-1, j) + u(i + 1, j)) /4 - u(i, j);
             u(i,j) = u(i,j) + r;
