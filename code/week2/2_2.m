@@ -1,10 +1,12 @@
 n = 50;
 u = zeros(n+2,n+2); % 初期状態の設定
 % 境界条件の設定
-u(:,1) = linspace(0,1,n+2);
-u(:,n+2) = linspace(1,0,n+2);
+x = linspace(0,1,n+2);
+u(:,1) = sin(pi*x);
+u(:,n+2) = 0;
+y = linspace(0,1,n+2);
 u(1,:) = linspace(0,1,n+2);
-u(n+2,:) = linspace(1,0,n+2);
+u(n+2,:) = sin(pi*y);
 maxit = 2000; % 最大反復R回数
 tol = 1e-04; % 判定条件
 
@@ -22,6 +24,6 @@ for it = 1:maxit
     end
 end
 
-x = linspace(0, 1, n)
-y = linspace(0, 1, n)
+x = linspace(0, 1, 52)
+y = linspace(0, 1, 52)
 surf(x, y, u)

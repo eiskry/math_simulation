@@ -5,7 +5,7 @@ u(:,1) = linspace(0,1,n+2);
 u(:,n+2) = linspace(1,0,n+2);
 u(1,:) = linspace(0,1,n+2);
 u(n+2,:) = linspace(1,0,n+2);
-maxit = 2000; % 最大反復回数
+maxit = 2000; % 最大反復R回数
 tol = 1e-04; % 判定条件
 
 for it = 1:maxit
@@ -21,3 +21,7 @@ for it = 1:maxit
         break;
     end
 end
+
+x = linspace(0, 1, 52)
+y = linspace(0, 1, 52)
+surf(x, y, u)
