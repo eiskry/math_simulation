@@ -15,16 +15,27 @@ for it = 1:maxit
             r =  (u(i, j + 1) + u(i, j-1) + u(i-1, j) + u(i + 1, j)) /4 - u(i, j);
             u(i,j) = u(i,j) + r;
             R = max(R, abs(r));
-        end
+        end        
     end
+    T_(it)=R;
+    t(it)=it;
     if R < tol
         break;
     end
 end
+t
+size(T_)
+semilogy(t,T_)
 
-x = linspace(0, 1, 52)
-y = linspace(0, 1, 52)
-surf(x, y, u)
-xlabel('x')
-ylabel('y')
-zlabel('z')
+x = linspace(0, 1, n+2);
+y = linspace(0, 1, n+2);
+% 
+% 
+% x = linspace(0, 1, n+2);
+% y = linspace(0, 1, n+2);
+% surf(x, y, u);
+% surf(x, y, u)
+% xlabel('x')
+% ylabel('y')
+% zlabel('z')
+
