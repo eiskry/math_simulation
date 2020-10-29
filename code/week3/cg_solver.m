@@ -1,6 +1,6 @@
-load n_50
+load n_200
 
-n = 50;
+n = 200;
 
 x = zeros(n*n, 1); % 初期状態の設定
 
@@ -43,4 +43,3 @@ x = linspace(0, 1, n+2);
 y = linspace(0, 1, n+2);
 
 surf(x, y, u);
-
