@@ -1,0 +1,28 @@
+for i = 10:100
+    A = rand(n);
+    A = (A + A')/2;
+    A = A + 5*eye(n);
+    b = rand(n,1);
+    x = zeros(n*n, 1); % 初期状態の設定
+
+    maxit = 2000; % 最大反復回数
+    tol = 1e-08; % 判定条件
+
+    r = b - A*x;
+    p = r;
+
+    for j = 1:maxit
+        Ap = A*p;
+        alpha = dot(p,r)/dot(p,Ap);
+        x = x + alpha*p;
+        r = r - alpha*Ap;
+        beta = -dot(r,Ap)/dot(p,Ap);
+        p = r + beta*p;
+        v(j)=norm(r);
+        if v(j) < tol
+            t(j) = j;
+            break;
+        end
+    end
+end
+

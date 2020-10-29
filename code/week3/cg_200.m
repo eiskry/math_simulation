@@ -11,18 +11,22 @@ r = b - A*x;
 p = r;
 
 for i = 1:maxit
+    v = 0;
     Ap = A*p;
     alpha = dot(p,r)/dot(p,Ap);
     x = x + alpha*p;
     r = r - alpha*Ap;
     beta = -dot(r,Ap)/dot(p,Ap);
     p = r + beta*p;
-    v(i)=norm(r);
-    t(i) = i;
-    if v(i) < tol
+    v = norm(r);
+    t(i) = v;
+    t2(i) = i;
+    if v < tol
         break;
     end
 end
+
+plot(t)
 
 X = reshape(x,[n,n])
 
@@ -43,3 +47,4 @@ x = linspace(0, 1, n+2);
 y = linspace(0, 1, n+2);
 
 surf(x, y, u);
+
