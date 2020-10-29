@@ -19,16 +19,12 @@ for i = 1:maxit
     beta = -dot(r,Ap)/dot(p,Ap);
     p = r + beta*p;
     v = norm(r);
-    t(i) = v;
-    t2(i) = i;
     if v < tol
         break;
     end
 end
 
-plot(t)
-
-X = reshape(x,[n,n])
+X = reshape(x,[n,n]);
 
 u = zeros(n+2,n+2);
 % 境界条件の設定

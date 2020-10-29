@@ -31,3 +31,5 @@ end
 
 plot(c);
 xlim([10 100]);
+xlabel('Matrix Size')
+ylabel('Number of Iterations')

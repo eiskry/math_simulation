@@ -9,7 +9,8 @@ tol = 1e-04; % 判定条件
 
 r = b - A*x;
 p = r;
-
+t = 0;
+t2 = 0;
 for i = 1:maxit
     v = 0;
     Ap = A*p;
@@ -25,7 +26,8 @@ for i = 1:maxit
         break;
     end
 end
-
-plot(t);
-
+t2
+plot(t)
+xlabel('Number of Iterations')
+ylabel('2-Norm of r_k')
 
