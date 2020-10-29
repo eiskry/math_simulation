@@ -23,17 +23,17 @@ for it = 1:maxit
         break;
     end
 end
-t
-size(T_)
-semilogy(t,T_)
-
-x = linspace(0, 1, n+2);
-y = linspace(0, 1, n+2);
-% 
+% t
+% size(T_)
+% semilogy(t,T_)
 % 
 % x = linspace(0, 1, n+2);
 % y = linspace(0, 1, n+2);
-% surf(x, y, u);
+% 
+% 
+x = linspace(0, 1, n+2);
+y = linspace(0, 1, n+2);
+surf(x, y, u);
 % surf(x, y, u)
 % xlabel('x')
 % ylabel('y')

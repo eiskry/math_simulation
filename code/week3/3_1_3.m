@@ -1,6 +1,6 @@
-load n_4
+load n_200
 
-n = 4;
+n = 200;
 
 x = zeros(n*n, 1); % 初期状態の設定
 
