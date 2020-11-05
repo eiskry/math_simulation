@@ -36,15 +36,19 @@ for it = 1:maxit
     ll1 = alpha*P + (1-alpha)*v*transpose(e);
     ll2 = norm(ll1*x - x);
     R = l*ll2;
-    x = alpha*P*x + (1-alpha)*v;
-    T_(it)=R;
-    t(it)=it;
     if R < tol
         break;
     end
+    x = alpha*P*x + (1-alpha)*v;
+    T_(it)=R;
+    t(it)=it;
+    
+    
 end
 
-% plot(t, T_);
 semilogy(t, T_);
 
-xlim([0 10]);
+xlim([0 12]);
+ylim([1e-05 10]);
+
+xlabel('Number of Iterations')

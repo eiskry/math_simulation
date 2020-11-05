@@ -1,24 +1,12 @@
-make P
-rng(20201023, 'twister')
-n = 1000;
-avg = 5;
-ind = randi(n, avg*n, 1);
-jnd = randi(n, avg*n, 1);
-P = sparse(ind, jnd, ones(avg*n, 1));
+P =[0 0 0 1/2 0 0;
+    1 0 0 0 0 0;
+    0 0 0 0 1 0;
+    0 1/2 0 0 0 1/2;
+    0 0 0 1/2 0 1/2;
+    0 1/2 1 0 0 0];
 
-for j = 1:n
-    non0 = nnz(P(:, j));
-    if non0 > 0
-        P(P(:, j)~=0, j) = 1 / non0;
-    else
-        P(:, j) = 1 / n;
-    end
-end
-
-clear ind jnd avg j n non0;
-
-%%%%
-n = 1000;
+%%%%%
+n = 6;
 
 
 e = ones(n,1);
@@ -42,7 +30,7 @@ for it = 1:maxit
     end
 end
 
-k = 3;
+k = 6;
 M = maxk(x, k);
 
 for i = 1:k

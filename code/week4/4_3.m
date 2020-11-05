@@ -36,15 +36,23 @@ for j = 1:10
         ll1 = alpha*P + (1-alpha)*v*transpose(e);
         ll2 = norm(ll1*x - x);
         R = l*ll2;
-        x = alpha*P*x + (1-alpha)*v;
-        T_(it)=R;
-        t=it;
         if R < tol
             break;
         end
+        x = alpha*P*x + (1-alpha)*v;
+        T_(it)=R;
+        t=it;
+        
     end
+    aa(j) = alpha;
     c(j) = t;
 end
 
-plot(c)
+plot(aa,c)
+
+xlim([0.45 1]);
+ylim([5 13]);
+
+xlabel('alpha')
+ylabel('Number of Iterations')
 
