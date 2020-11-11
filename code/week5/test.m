@@ -17,6 +17,10 @@ interval = 0.01;
 x2 = 3;
 x1 = 2;
 
-n = (x2-x1)/ interval +1
+n = (x2-x1)/ interval +1;
 
-sigma = linspace(2, 3, n)
+sigma = linspace(2, 3, n);
+sigma(3);
+I_ = ones(1, 10);
+I = diag(I_);
+2.01*I
