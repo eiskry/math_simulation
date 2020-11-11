@@ -8,6 +8,15 @@ A2_2 = diag(x2, 1);
 A1_1 = diag(x1, -2);
 A1_2 = diag(x1, 2);
 
-A = A3+A2_1+A2_2+A1_1+A1_2
+A = A3+A2_1+A2_2+A1_1+A1_2;
+
+inv(A);
 
 
+interval = 0.01;
+x2 = 3;
+x1 = 2;
+
+n = (x2-x1)/ interval +1
+
+sigma = linspace(2, 3, n)
