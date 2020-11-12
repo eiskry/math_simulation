@@ -10,7 +10,7 @@ A1_2 = diag(x1, 2);
 
 A = A3+A2_1+A2_2+A1_1+A1_2;
 
-x = ones(100, 1);
+x = ones(n, 1);
 
 maxit = 2000;
 tol = 1e-05;
@@ -28,5 +28,5 @@ for it = 1:maxit
         break;
     end
 end
-x
+
 lambda

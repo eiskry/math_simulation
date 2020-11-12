@@ -21,4 +21,6 @@ for it = 1:maxit
     T_(it)=r;
     t(it)=it;
 end
+
+lambda
 x

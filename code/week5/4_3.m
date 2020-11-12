@@ -48,5 +48,7 @@ for i = 1:numel(sigma)
 end
 
 plot(s,l)
+xlabel('Value of shift')
+ylabel('Value of Lambda')
 % semilogy(t,T_)
 

@@ -48,5 +48,6 @@ for i = 1:numel(sigma)
 end
 
 plot(s,c)
-% semilogy(t,T_)
+xlabel('Value of Shift')
+ylabel('Number of Iterations')
 
