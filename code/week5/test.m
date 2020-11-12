@@ -10,17 +10,38 @@ A1_2 = diag(x1, 2);
 
 A = A3+A2_1+A2_2+A1_1+A1_2;
 
-inv(A);
 
+x = ones(n, 1);
 
 interval = 0.01;
 x2 = 3;
 x1 = 2;
 
-n = (x2-x1)/ interval +1;
+q = (x2-x1)/ interval +1;
 
-sigma = linspace(2, 3, n);
-sigma(3);
-I_ = ones(1, 10);
+sigma = linspace(2, 3, q);
+
+I_ = ones(1, n);
 I = diag(I_);
-2.01*I
+
+maxit = 2000;
+tol = 1e-05;
+
+
+shift = sigma(1);
+x = ones(100, 1);
+w = (shift*I-A)\x;
+x = w / norm(w);
+l1 = dot(x, x);
+l2 = dot(x,(shift*I-A)\x);
+lambda = l1/l2;
+r = norm(A*x - lambda*x)
+
+w = inv(shift*I-A)*x;
+x = w / norm(w);
+l1 = dot(x, x);
+l2 = dot(x,inv(shift*I-A)*x);
+lambda = l1/l2;
+r2 = norm(A*x - lambda*x)
+    
+

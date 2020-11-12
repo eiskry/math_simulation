@@ -44,9 +44,9 @@ for i = 1:numel(sigma)
         t = it;
     end
     s(i) = shift;
-    c(i) = t;
+    l(i) = lambda;
 end
 
-plot(s,c)
+plot(s,l)
 % semilogy(t,T_)
 
