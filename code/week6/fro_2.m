@@ -9,14 +9,36 @@ A = U1*V1' + 1.0E-5*U2*V2' + 1.0E-10*rand(100,70);
 
 
 [U, S, V] = svd(A);
-s = diag(S)
+s = diag(S);
 n = 70;
-val = zeros(70,1);
+fro = zeros(70,1);
 
-for i=2:n
-    l = i;
-    
-    val(l) = sqrt(s(i));
+for i=1:n
+    k = i;
+    A_ = zeros(100,70);
+    for j=1:k
+        u_tmp = U(:,j);
+        v_tmp = transpose(V(:,j));
+        tmp = s(j)*u_tmp*v_tmp;
+        A_ = A_ +tmp;
+    end
+    val = A - A_;
+    fro(i) = norm(val, 'fro');
 end
 
-semilogy(val)
+value = zeros(70,1);
+
+for i=1:n-1
+    k = i;
+    l = k + 1;
+    value_ = 0;
+    for j=l:n
+        tmp = s(j)*s(j);
+        value_ = value_ + tmp;
+    end
+    value(i) = sqrt(value_);
+end
+
+t = [value fro]
+
+semilogy(value)

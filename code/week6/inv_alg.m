@@ -28,7 +28,5 @@ for it = 1:maxit
     t=it;
 end
 
-x
-lambda
 sqrt(lambda)
 
