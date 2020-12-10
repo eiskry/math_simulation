@@ -31,7 +31,6 @@ for i = 1:numel(sigma)
     shift = sigma(i);
     x = ones(100, 1);
     for it = 1:maxit
-        r = 0;
         w = (shift*I-A)\x;
         x = w / norm(w);
         l1 = dot(x, x);
