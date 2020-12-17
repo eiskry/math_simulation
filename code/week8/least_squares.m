@@ -18,14 +18,17 @@ end
 
 k = i;
 
+U_k = zeros(m, k);
 for j=1:k
     U_k(:,j)=U(:,j);
 end
 
+V_k = zeros(n, k);
 for j=1:k
     V_k(:,j)=V(:,j);
 end
 
+sk = zeros(1,k);
 for j=1:k
     sk(j)=s(j);
 end
