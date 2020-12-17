@@ -36,5 +36,10 @@ tmp = sig_k\transpose(U_k);
 
 X_k = V_k *tmp;
 
-%%%%%%%%% X_kを求める
+%%%%%%%%% Wを求める
+
+W = Y*X_k;
+
+%%%%%%%%% Wをテストする
+check(W, test_X, test_Y)
 
