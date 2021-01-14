@@ -1,6 +1,6 @@
 # 数理アルゴリズムとシミュレーション
 Language
-・MATLAB
+- MATLAB
 
 #### 第１回　MATLAB入門
 
